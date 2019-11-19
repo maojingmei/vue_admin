@@ -22,7 +22,6 @@
 
 <script>
 import axios from 'axios'
-// import {queryUserList} from '@/services/user.js'
 export default {
   name: 'UserList',
   data(){
@@ -44,6 +43,6 @@ export default {
 }
 </script>
 
-<style lang="scoped" lang='less'>
+<style scoped lang='scss'>
   
 </style>
