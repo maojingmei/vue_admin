@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import UserList from '@/views/user'
+import Layout from '@/layout'
+import User from '@/views/user'
 
 Vue.use(Router)
 
@@ -9,8 +10,17 @@ export default new Router({
     {path: '/login', component: () => import('@/views/login/index'), hidden: true},
     {
       path: '/',
-      name: 'UserList',
-      component: UserList
+      component: Layout,
+      redirect:'/user',
+      alwaysShow: true,
+      hidden: true,
+      children: [
+        {
+          path: 'user',
+          component: User,
+          name: 'User'
+        }
+      ]
     }
   ]
 })
